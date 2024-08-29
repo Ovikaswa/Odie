@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Ulang Tahun, Sayang!</h1>
+        <img src="kue-ulang-tahun.jpg" alt="Kue Ulang Tahun" class="cake-img">
+        <p>Semoga hari-harimu selalu bahagia, penuh cinta, dan berkah.</p>
+        <button onclick="showSurprise()">Klik untuk Kejutan!</button>
+        <div id="surprise" style="display:none;">
+            <h2>🎉 Kejutan! 🎉</h2>
+            <p>Selamat ulang tahun yang ke-<span id="age"></span>! Aku sangat bersyukur bisa bersamamu.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdf6e3;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+h1 {
+    color: #ff6f61;
+}
+
+p {
+    font-size: 18px;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff4b47;
+}
+
+.cake-img {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+
+    // Hitung umur berdasarkan tanggal lahir
+    let birthYear = prompt("Masukkan tahun lahir pasanganmu:");
+    let currentYear = new Date().getFullYear();
+    let age = currentYear - birthYear;
+
+    document.getElementById("age").innerText = age;
+}
+</html>
